@@ -1,3 +1,7 @@
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/N4h9A9o5TcWmjdQZVJ/giphy.gif" width="250"/>
+</div>
+
 # Biblioteca Arrays de Java
 Este repositorio contiene funciones propias desarrolladas en Java para el manejo de _arrays_ de números enteros, imitando métodos existentes de la clase `Arrays` o `System`. La principal función del código del presente repositorio es entender mejor el funcionamiento de estos métodos y practicar algoritmia básica con _arrays_.
 
@@ -128,7 +132,7 @@ public static int[] eliminarOrdenada(int[] origen, int elemento) {
 }
 ```
 ### iguales 
-Este método compara dos _arrays_ y devuelve _'true'_ si contiene el mismo número de elementos en el mismo orden, es decir, si ambos _arrays_ son idénticos
+Este método compara dos _arrays_ y devuelve _'true'_ si contiene el mismo número de elementos en el mismo orden, es decir, si ambos _arrays_ son idénticos. Es una imitación del método [Arrays.equals](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#equals(int[],%20int[])):
 ```
 public static boolean iguales(int[] a, int[] b) {
     boolean sonIguales = false;
