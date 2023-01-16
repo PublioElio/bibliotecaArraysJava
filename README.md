@@ -128,7 +128,7 @@ public static int[] eliminarOrdenada(int[] origen, int elemento) {
 }
 ```
 ### iguales 
-Este método compara dos arrays y devuelve _'true'_ si contiene el mismo número de elementos en el mismo orden, es decir, si ambos arrays son idénticos
+Este método compara dos _arrays_ y devuelve _'true'_ si contiene el mismo número de elementos en el mismo orden, es decir, si ambos _arrays_ son idénticos
 ```
 public static boolean iguales(int[] a, int[] b) {
     boolean sonIguales = false;
@@ -143,6 +143,10 @@ public static boolean iguales(int[] a, int[] b) {
 }
 ```
 ## Implementación en el código
-
+Para emplear esta biblioteca, hay que incluir el archivo `BibliotecaArrays.java` en tu proyecto e importarlo en aquellas clases donde se llame a cualquiera de sus métodos, con la siguiente línea de código justo antes del `main`:
+```
+import static biblioteca.arrays.BibliotecaArrays.*;
+```
 ## Testeo
+Los métodos de la presente biblioteca se han testeado con la clase `TestBibliotecaArrays.java`
 
