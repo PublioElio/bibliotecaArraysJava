@@ -68,7 +68,6 @@ public static int[] copiaDeRango(int[] origen, int desde, int hasta) {
 ```
 ### arrayCopia
 Este método imita el comportamiento del método [arrayCopy](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy(java.lang.Object,%20int,%20java.lang.Object,%20int,%20int)), copiando un fragmento de un _array_ en otro, eliminando de esta forma, el contenido previo de esos elementos del _array_ destino:
-
 ```
 public static void arrayCopia(int[] origen, int posicionOrigen, int[] destino, int posicionDestino, int longitud) {
     for (int i = 0; i < longitud; i++) {
@@ -87,7 +86,6 @@ public static int[] insertarNoOrdenada(int[] origen, int elemento) {
 ```
 ### insertarOrdenada
 Este método inserta un nuevo elemento en un _array_ ordenado. El código hace uso del método [Arrays.binarySearch](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#binarySearch(int[],%20int)), así que hay que importar la clase `Arrays` para usar este método.
-
 ```
 public static int[] insertarOrdenada(int[] array, int nuevo) {
         int indiceInsercion = Arrays.binarySearch(array, nuevo);
@@ -102,18 +100,48 @@ public static int[] insertarOrdenada(int[] array, int nuevo) {
 }
 ```
 ### eliminarNoOrdenada
-
+Este método elimina un elemento dentro de un _array_ desordenado (si lo encuentra):
 ```
+public static int[] eliminarNoOrdenada(int[] array, int clave) {
+    int indiceBorrado;
+    indiceBorrado = buscar(array, clave);
+    if (indiceBorrado != -1) {
+        array[indiceBorrado] = array[array.length - 1];
+        array = copiaDe(array, array.length - 1);
+    }
+    return (array);
+}
 ```
 ### eliminarOrdenada
-
+Este método elimina un elemento de un _array_ ordenado de enteros, al igual que el método `insertarOrdenada` de esta biblioteca, tendremos que immportar la clase [Arrays.binarySearch](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#binarySearch(int[],%20int)).
 ```
+public static int[] eliminarOrdenada(int[] origen, int elemento) {
+    int indiceBorrado;
+    indiceBorrado = Arrays.binarySearch(origen, elemento);
+    if (indiceBorrado >= 0) {
+        for (int i = indiceBorrado; i < origen.length - 1; i++) {
+            origen[i] = origen[i + 1];
+        }
+        origen = copiaDe(origen, origen.length - 1);
+    }
+    return (origen);
+}
 ```
 ### iguales 
-
+Este método compara dos arrays y devuelve _'true'_ si contiene el mismo número de elementos en el mismo orden, es decir, si ambos arrays son idénticos
 ```
-```
+public static boolean iguales(int[] a, int[] b) {
+    boolean sonIguales = false;
 
+    if (a.length == b.length) {
+        sonIguales = true;
+        for (int i = 0; i < a.length && sonIguales; i++) {
+            sonIguales = a[i] == b[i];
+        }
+    }
+    return (sonIguales);
+}
+```
 ## Implementación en el código
 
 ## Testeo
