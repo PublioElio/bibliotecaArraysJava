@@ -18,12 +18,32 @@ La clase BibliotecaArrays contiene las siguientes funciones:
 
 ## Explicación de las funciones
 
-### Buscar
+### buscar
 Este método busca un elemento en un array de enteros, devolviendo la posición donde lo ha encontrado, o un -1 si ese elemento no se encuentra en el array:
 ```
-buscar(int array[], int clave);
+public static int buscar(int array[], int clave) {
+    int pos = -1;
+    for (int i = 0; (i < array.length) && (pos == -1); i++) {
+        pos = array[i] == clave ? i : -1;
+    }
+    return (pos);
+}
 ```
-
+### muestraArray
+Este método muestra por terminal un array con sus elementos entre corchetes y separados por guiones. Si se incluyen valores negativos entre los elementos, la salida puede resultar algo confusa:
+```
+public static void muestraArray(int[] array) {
+    System.out.print("[");
+    for (int i = 0; i < array.length; i++) {
+        if (i == (array.length - 1)) {
+            System.out.print(array[i]);
+        } else {
+            System.out.print(array[i] + " - ");
+        }
+    }
+    System.out.println("]");
+}
+```
 
 muestraArray(int[] array);
 copiaDe(int[] origen, int longitud);
