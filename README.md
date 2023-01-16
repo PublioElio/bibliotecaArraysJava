@@ -1,5 +1,5 @@
 # Biblioteca Arrays de Java
-Este repositorio contiene funciones propias desarrolladas en Java para el manejo de _arrays_ de números enteros, imitando métodos existentes de la clase `Arrays`. La principal función del código del presente repositorio es entender mejor el funcionamiento de estos métodos y practicar algoritmia básica con _arrays_.
+Este repositorio contiene funciones propias desarrolladas en Java para el manejo de _arrays_ de números enteros, imitando métodos existentes de la clase `Arrays` o `System`. La principal función del código del presente repositorio es entender mejor el funcionamiento de estos métodos y practicar algoritmia básica con _arrays_.
 
 ## Índice
 
@@ -67,8 +67,14 @@ public static int[] copiaDeRango(int[] origen, int desde, int hasta) {
 }
 ```
 ### arrayCopia
+Este método imita el comportamiento del método [arrayCopy](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy(java.lang.Object,%20int,%20java.lang.Object,%20int,%20int)), copiando un fragmento de un _array_ en otro, eliminando de esta forma, el contenido previo de esos elementos del _array_ destino:
 
 ```
+public static void arrayCopia(int[] origen, int posicionOrigen, int[] destino, int posicionDestino, int longitud) {
+    for (int i = 0; i < longitud; i++) {
+        destino[posicionDestino + i] = origen[posicionOrigen + i];
+    }
+}
 ```
 ### insertarNoOrdenada
 
