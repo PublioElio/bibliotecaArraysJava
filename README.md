@@ -77,12 +77,29 @@ public static void arrayCopia(int[] origen, int posicionOrigen, int[] destino, i
 }
 ```
 ### insertarNoOrdenada
-
+Este método inserta un elemento al final de un _array_ cuyos elementos están desordenados:
 ```
+public static int[] insertarNoOrdenada(int[] origen, int elemento) {
+    origen = copiaDe(origen, origen.length + 1);
+    origen[origen.length - 1] = elemento;
+    return (origen);
+}
 ```
 ### insertarOrdenada
+Este método inserta un nuevo elemento en un _array_ ordenado. El código hace uso del método [Arrays.binarySearch](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#binarySearch(int[],%20int)), así que hay que importar la clase `Arrays` para usar este método.
 
 ```
+public static int[] insertarOrdenada(int[] array, int nuevo) {
+        int indiceInsercion = Arrays.binarySearch(array, nuevo);
+        if (indiceInsercion < 0) {
+            indiceInsercion = -indiceInsercion - 1;
+        }
+        int copia[] = new int[array.length + 1];
+        arrayCopia(array, 0, copia, 0, indiceInsercion);
+        arrayCopia(array, indiceInsercion, copia, (indiceInsercion + 1), (array.length - indiceInsercion));
+        copia[indiceInsercion] = nuevo;
+        return (copia);
+}
 ```
 ### eliminarNoOrdenada
 
