@@ -3,22 +3,24 @@ package biblioteca.arrays;
 import java.util.Arrays;
 
 /**
- * Esta es una biblioteca de funciones relacionadas con manejo de arrays
+ * Esta es una biblioteca de funciones relacionadas con manejo de arrays,
+ * imitando métodos ya existentes de la clase 'Arrays'
  *
  * @author Adriano Díaz Benítez <Adriano.Díaz>
  */
 public class BibliotecaArrays {
 
     /**
-     * Este método busca un elemento en un array, devolviendo la posición donde
-     * lo ha encontrado, o devuelve un -1 si no se encuentra en el array
+     * Este método busca un elemento en un array de enteros, devolviendo la
+     * posición donde lo ha encontrado, o un -1 si ese elemento no se encuentra
+     * en el array
      *
      * @param array el array donde buscar el elemento
      * @param clave la clave a buscar
      * @return la posición donde se encuentra el elemento o un -1 si no está en
      * el array
      */
-    static int buscar(int array[], int clave) {
+    public static int buscar(int array[], int clave) {
         int pos = -1;
         for (int i = 0; (i < array.length) && (pos == -1); i++) {
             pos = array[i] == clave ? i : -1;
@@ -27,7 +29,7 @@ public class BibliotecaArrays {
     }
 
     /**
-     * Esta función te muestra por terminal un array con sus elementos entre
+     * Este método muestra por terminal un array con sus elementos entre
      * corchetes y separados por guiones
      *
      * @param array el array a mostrar
@@ -47,7 +49,8 @@ public class BibliotecaArrays {
     /**
      * Este método imita el comportamiento del método copyOf, copiando un array
      * en otro de una determinada longitud. Si el nuevo array el mayor que el
-     * anterior, llena los "huecos" con ceros
+     * anterior, llena los "huecos" con ceros, si la longitud del nuevo array es
+     * inferior, copia hasta la longitud especificada
      *
      * @param origen array que vamos a copiar
      * @param longitud la longitud del array destino
@@ -63,11 +66,11 @@ public class BibliotecaArrays {
 
     /**
      * Este método imita el comportamiento del método copyOfRange, copiando un
-     * rango dentro de un array y devolviéndolo en un nuevo array
+     * rango de elementos dentro de un array y devolviéndolo en un nuevo array
      *
      * @param origen el array que vamos a copiar
-     * @param desde desde dónde vamos a copiar
-     * @param hasta hasta dónde vamos a copiar
+     * @param desde desde dónde vamos a copiar (incluido)
+     * @param hasta hasta dónde vamos a copiar (no incluido)
      * @return el nuevo array con el rango determinado
      */
     public static int[] copiaDeRango(int[] origen, int desde, int hasta) {
@@ -80,7 +83,8 @@ public class BibliotecaArrays {
 
     /**
      * Este método imita el comportamiento del método arrayCopy, copiando un
-     * fragmento de un array en otro array
+     * fragmento de un array de enteros en otro, eliminando de esta forma, el
+     * contenido previo de esos elementos del array destino
      *
      * @param origen el array del que vamos a copiar un fragmento
      * @param posicionOrigen la posición desde donde empezaremos a copiar
@@ -100,7 +104,7 @@ public class BibliotecaArrays {
      *
      * @param origen el array a modificar
      * @param elemento el elemento a insertar
-     * @return el array modificado (hay que machacar el anterior)
+     * @return el array modificado
      */
     public static int[] insertarNoOrdenada(int[] origen, int elemento) {
         origen = copiaDe(origen, origen.length + 1);
@@ -113,8 +117,7 @@ public class BibliotecaArrays {
      *
      * @param array el array ordenado en el que hay que insertar un elemento
      * @param nuevo el nuevo elemento a insertar
-     * @return el array nuevo con el elemento insertado, hay que machacar el
-     * anterior
+     * @return el array nuevo con el elemento insertado
      */
     public static int[] insertarOrdenada(int[] array, int nuevo) {
         int indiceInsercion = Arrays.binarySearch(array, nuevo);
@@ -136,7 +139,7 @@ public class BibliotecaArrays {
     }
 
     /**
-     * Esta función elimina un elemento dentro de un array desordenado (si lo
+     * Este método elimina un elemento dentro de un array desordenado (si lo
      * encuentra)
      *
      * @param array el array desordenado donde buscar el elemento
@@ -157,11 +160,11 @@ public class BibliotecaArrays {
     }
 
     /**
-     * Esta función elimina un elemento de un array ordenado de enteros
+     * Este método elimina un elemento de un array ordenado de enteros
      *
      * @param origen el array donde buscar y eliminar el elemento
      * @param elemento el elemento a eliminar
-     * @return
+     * @return el array original con el elemento eliminado
      */
     public static int[] eliminarOrdenada(int[] origen, int elemento) {
         int indiceBorrado;
@@ -176,8 +179,9 @@ public class BibliotecaArrays {
     }
 
     /**
-     * Esta función compara dos arrays y te dice si contiene el mismo número de
-     * elementos en el mismo orden
+     * Este método compara dos arrays y devuelve 'true' si contiene el mismo
+     * número de elementos en el mismo orden, es decir, si ambos arrays son
+     * idénticos
      *
      * @param a
      * @param b
@@ -193,6 +197,5 @@ public class BibliotecaArrays {
             }
         }
         return (sonIguales);
-
     }
 }
