@@ -55,14 +55,41 @@ public static int[] copiaDe(int[] origen, int longitud) {
     return (destino);
 }
 ```
+### copiaDeRango
+Este método imita el comportamiento del método [copyOfRange](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#copyOfRange(int[],%20int,%20int)), copiando un rango de elementos dentro de un _array_ y devolviéndolo en un nuevo _array_:
+```
+public static int[] copiaDeRango(int[] origen, int desde, int hasta) {
+    int[] destino = new int[hasta - desde];
+    for (int i = 0; i < destino.length; i++) {
+        destino[i] = origen[desde + i];
+    }
+    return (destino);
+}
+```
+### arrayCopia
 
-copiaDeRango(int[] origen, int desde, int hasta);
-arrayCopia(int[] origen, int posicionOrigen, int[] destino, int posicionDestino, int longitud);
-insertarNoOrdenada(int[] origen, int elemento);
-insertarOrdenada(int[] array, int nuevo);
-eliminarNoOrdenada(int[] array, int clave);
-eliminarOrdenada(int[] origen, int elemento);
-iguales(int[] a, int[] b);
+```
+```
+### insertarNoOrdenada
+
+```
+```
+### insertarOrdenada
+
+```
+```
+### eliminarNoOrdenada
+
+```
+```
+### eliminarOrdenada
+
+```
+```
+### iguales 
+
+```
+```
 
 ## Implementación en el código
 
