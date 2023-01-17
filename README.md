@@ -34,7 +34,7 @@ public static int buscar(int array[], int clave) {
 }
 ```
 ### muestraArray
-Este método muestra por terminal un _array_ con sus elementos entre corchetes y separados por guiones. Si se incluyen valores negativos entre los elementos, la salida puede resultar algo confusa:
+Este método muestra por terminal un _array_ con sus elementos entre corchetes y separados por barras verticales.
 ```
 public static void muestraArray(int[] array) {
     System.out.print("[");
@@ -42,7 +42,7 @@ public static void muestraArray(int[] array) {
         if (i == (array.length - 1)) {
             System.out.print(array[i]);
         } else {
-            System.out.print(array[i] + " - ");
+            System.out.print(array[i] + " | ");
         }
     }
     System.out.println("]");
