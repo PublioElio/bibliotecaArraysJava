@@ -40,7 +40,7 @@ public class BibliotecaArrays {
             if (i == (array.length - 1)) {
                 System.out.print(array[i]);
             } else {
-                System.out.print(array[i] + " - ");
+                System.out.print(array[i] + " | ");
             }
         }
         System.out.println("]");
